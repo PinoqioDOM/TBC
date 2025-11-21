@@ -1,9 +1,16 @@
 import About from './components/About';
+import Hero from './components/Hero';
 
 export default function Home() {
   return (
-    <div className="relative w-screen h-screen bg-blue-900">
-      <About />    
+    <div className="relative bg-blue-900 min-h-screen">
+      
+      <div className="absolute top-0 w-full z-20"> 
+          <About />
+      </div>
+      
+      <Hero />
+      
     </div>
   );
 }

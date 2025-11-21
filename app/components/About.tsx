@@ -13,7 +13,7 @@ const About = () => {
           width={80}
           priority
         />
-        <h1 className="text-xl font-bold tracking-widest">მთავარია გჯეროდეს!</h1>
+        <h1 className="text-xl text-white font-bold tracking-widest p-2">მთავარია გჯეროდეს!</h1>
       </div>
 
       <div className="border-b border-white w-full"></div> 
