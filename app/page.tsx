@@ -1,5 +1,6 @@
 import About from './components/About';
 import Hero from './components/Hero';
+import Filters from './components/Filters';
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       </div>
       
       <Hero />
-      
+      <Filters />
     </div>
   );
 }
