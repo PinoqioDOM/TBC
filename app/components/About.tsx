@@ -3,9 +3,9 @@ import Logo from "@/public/Logo.png"
 
 const About = () => {
   return (
-    <div className="w-full"> 
+    <div className="w-full sticky top-0 z-50 bg-blue-900"> 
       
-      <div className="relative top-0 left-0 flex items-center">
+      <div className="relative flex items-center">
         <Image
           src={Logo}
           alt="Tbc Logo"

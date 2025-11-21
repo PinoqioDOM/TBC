@@ -12,8 +12,8 @@ const Filters = () => {
 
   const filteredVacancies = vacancies.filter((vacancy) => {
     const matchesSearch = vacancy.title.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = category ? vacancy.category === category : true;
-    const matchesLocation = location ? vacancy.location === location : true;
+    const matchesCategory = category && category !== "all" ? vacancy.category === category : true;
+    const matchesLocation = location && location !== "all" ? vacancy.location === location : true;
     
     return matchesSearch && matchesCategory && matchesLocation;
   });
@@ -28,12 +28,12 @@ const Filters = () => {
           placeholder="მოძებნე ვაკანსია..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="flex-1 bg-white border-gray-300"
+          className="flex-1 bg-white border-2 border-blue-900 py-5"
         />
 
         {/* კატეგორია */}
         <Select value={category} onValueChange={setCategory}>
-          <SelectTrigger className="w-full md:w-48 bg-white">
+          <SelectTrigger className="w-full md:w-48 bg-white border-2 border-blue-900 py-5">
             <SelectValue placeholder="ყველა კატეგორია" />
           </SelectTrigger>
           <SelectContent>
@@ -49,7 +49,7 @@ const Filters = () => {
 
         {/* ლოკაცია */}
         <Select value={location} onValueChange={setLocation}>
-          <SelectTrigger className="w-full md:w-48 bg-white">
+          <SelectTrigger className="w-full md:w-48 bg-white border-2 border-blue-900 py-5">
             <SelectValue placeholder="ყველა ლოკაცია" />
           </SelectTrigger>
           <SelectContent>
@@ -67,11 +67,7 @@ const Filters = () => {
           filteredVacancies.map((item) => (
             <div 
               key={item.id} 
-              className={`p-4 border-2 rounded-lg transition-all ${
-                item.isActive 
-                  ? 'border-green-500 bg-white hover:shadow-md' 
-                  : 'border-red-500 bg-gray-50 opacity-60'
-              }`}
+              className="p-4 border-2 border-blue-900 rounded-lg transition-all"
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">

@@ -4,7 +4,7 @@ import Filters from './components/Filters';
 
 export default function Home() {
   return (
-    <div className="relative bg-blue-900 min-h-screen">
+    <div className="relative bg-blue-900 min-h-screen py-4">
       
       <div className="absolute top-0 w-full z-20"> 
           <About />
